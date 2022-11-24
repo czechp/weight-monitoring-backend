@@ -27,7 +27,7 @@ abstract class ReportSuper {
         this.id = 0L;
         this.version = 0L;
         this.lineName = lineName;
-        this.reportDate = workShift == WorkShift.III ? LocalDate.now().minusDays(1) : LocalDate.now();
+        this.reportDate = (workShift == WorkShift.III || workShift == WorkShift.II) ? LocalDate.now().minusDays(1) : LocalDate.now();
         this.workShift = workShift;
         this.reportSummaryData = reportSummaryData;
         this.dosingDeviceFirstModule = dosingDeviceFirstModule;
