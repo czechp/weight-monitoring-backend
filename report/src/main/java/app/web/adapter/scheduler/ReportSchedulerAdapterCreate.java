@@ -32,7 +32,7 @@ class ReportSchedulerAdapterCreate {
         createReports(WorkShift.I);
     }
 
-    @Scheduled(cron = "0 58 2 * * *")
+    @Scheduled(cron = "0 58 22 * * *")
     @Transactional
     public void createReportForThirdWorkShift(){
         createReports(WorkShift.II);
