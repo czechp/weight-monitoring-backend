@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @AllArgsConstructor
@@ -12,6 +13,7 @@ import java.util.List;
 abstract class ReportSuper {
     private final long id;
     private final long version;
+    private LocalDateTime creationDate;
     private final String lineName;
     private final LocalDate reportDate;
     private final WorkShift workShift;

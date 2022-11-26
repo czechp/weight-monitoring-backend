@@ -36,6 +36,7 @@ public class ReportFactory {
         return new Report(
                 entity.getId(),
                 entity.getVersion(),
+                entity.getCreationDate(),
                 entity.getLineName(),
                 entity.getReportDate(),
                 entity.getWorkShift(),
@@ -129,6 +130,7 @@ public class ReportFactory {
         return new ReportEntity(
                 report.getId(),
                 report.getVersion(),
+                report.getCreationDate(),
                 report.getLineName(),
                 report.getReportDate(),
                 report.getWorkShift(),

@@ -5,9 +5,11 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +24,8 @@ public class ReportEntity {
     private long id;
     @Version
     private long version;
+    @CreationTimestamp
+    private LocalDateTime creationDate;
     private String lineName;
     private LocalDate reportDate;
     @Enumerated(EnumType.STRING)
@@ -38,7 +42,7 @@ public class ReportEntity {
     @OneToMany(mappedBy = "report", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<ReportDosingDeviceLastEntity> lastDosingDevices = new ArrayList<>();
 
-    public ReportEntity(long id,
+    ReportEntity(long id,
                         long version,
                         String lineName,
                         LocalDate reportDate,
@@ -66,6 +70,7 @@ public class ReportEntity {
 
     public ReportEntity(long id,
                         long version,
+                        LocalDateTime localDateTime,
                         String lineName,
                         LocalDate reportDate,
                         WorkShift workShift,
